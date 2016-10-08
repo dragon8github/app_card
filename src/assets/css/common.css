@@ -1,0 +1,33 @@
+/*  将浏览器的基准字号设置为 62.5%，也就是 10px */
+html {
+  font-size: 62.5%;
+}
+/* 为了计算方便。然后在 body 上应用了 font-size: 1.6rem;，将页面字号设置为 16px */
+body {
+  font-size: 1.6rem; /* =16px */
+}
+/* 全局字体设置 */
+body,.mui-input-row label,::-webkit-input-placeholder{
+	  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+/* 头部左边图标按钮 */
+button.mui-left.mui-action-back.mui-btn.mui-btn-link.mui-btn-nav.mui-pull-left {
+height: 44px;color:#fff;
+}
+/* 头部背景颜色 */
+div.mui-navbar-inner.mui-bar.mui-bar-nav.mui-navbar-center {
+background: #37363b;
+}
+/* 头部标题颜色 */
+h1.mui-center.mui-title {
+color: #fff;
+}
+/* 内容区域与头部的间距 */
+div.mui-content{
+	margin-top:60px;
+	margin-bottom: 60px;
+}
+/* 淘宝IOC的默认大小 */
+.iconfont{
+	font-size:35px;
+}
