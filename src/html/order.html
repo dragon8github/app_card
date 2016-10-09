@@ -3,12 +3,14 @@
 		<title>全部订单</title> 
 		<meta charset="UTF-8" />
 	</head>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/mui.min.css" />
 	<link rel="stylesheet" type="text/css" href="../assets/ico/iconfont.css"/>
 	<link rel="stylesheet" type="text/css" href="../assets/css/common.css"/>
 	
 	<style>
-		div.mui-content{margin-top:44px;}
+		div.mui-content{margin-top:44px;margin-bottom: 0px;}
 		div#sliderSegmentedControl{background: #fff;height:58px;line-height: 58px;}
 		.mui-segmented-control .mui-control-item{line-height: 58px;}
 		.arrow-down{ width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #000;position: absolute;top:49%;margin-left:5px;}
@@ -18,6 +20,7 @@
 		.mui-table-view-cell{padding: 11px 15px 0px 11px;}
 		.mui-slider .mui-slider-group .mui-slider-item img{width:auto;}
 		#slider{height: 100%;}
+		.mui-table-view:last-child{margin-bottom:120px;}
 		
 		._img_div{width:25%;float:left;height:60px;text-align: center;max-width: 85px;}
 		._img_div img{width:65px;height:61px;}
@@ -65,7 +68,7 @@
 				
 				
 				<div class="mui-slider-group">
-					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">	
 						<div id="scroll1" class="mui-scroll-wrapper">
 							<div class="mui-scroll">
 								<ul class="mui-table-view">									
@@ -112,9 +115,6 @@
 										<div class="_link"></div>
 										<div class="_bottom_div">											
 											<span class="_bottom_div_font">共 1 件商品</span>
-											<button type="button" class="mui-btn mui-btn-danger _bottom_div_btn">
-												支付
-											</button>
 										</div>
 									</li>									
 								</ul>
@@ -137,9 +137,6 @@
 										<div class="_link"></div>
 										<div class="_bottom_div">											
 											<span class="_bottom_div_font">共 1 件商品</span>
-											<button type="button" class="mui-btn mui-btn-danger _bottom_div_btn">
-												支付
-											</button>
 										</div>
 									</li>									
 								</ul>
@@ -162,9 +159,6 @@
 										<div class="_link"></div>
 										<div class="_bottom_div">											
 											<span class="_bottom_div_font">共 1 件商品</span>
-											<button type="button" class="mui-btn mui-btn-danger _bottom_div_btn">
-												支付
-											</button>
 										</div>
 									</li>									
 								</ul>		
