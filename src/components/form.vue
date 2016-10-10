@@ -1,30 +1,5 @@
-<html>
-	<head>
-		<title>信用卡还款</title>
-		<meta charset="UTF-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	</head>
-	<link rel="stylesheet" href="../assets/css/mui.min.css" />
-	<link rel="stylesheet" type="text/css" href="../assets/ico/iconfont.css"/>
-	<link rel="stylesheet" type="text/css" href="../assets/css/common.css"/>
-	
-	<style>
-		.mui-table-view{margin-top:20px}
-		h5{margin:15px 0px 0px 15px;}
-		#checkbox_div{text-align: center;margin: 20px 0px;font-size:13px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
-		#form_checkbox{border-radius: 0;width:20px;height: 20px;border:1px solid #ccc;}
-		#checkbox_font{padding-left:10px}
-		#form_sublie{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-line-pack: center;align-content: center;}
-		#form_sublie a{min-width:264px;width:70%;max-width:300px;height:45px;color:#fff;font-size:20px;}
-		.mybtnColor{background: #ffa684;}
-		.mybtnColor:active{background: #f0571d;}
-		::-webkit-input-placeholder{font-size:14px;}
-		.placeholder{color:#a9a9a9;margin-left:30px;font-size:14px;}
-		#tongxunlu{float:right;position:absolute;right:33px;top:10px;color:#537092;}
-		#yonghu{font-size:29px;position:absolute;right:33px;top:10px;color:#537092}
-	</style>
-	<body> 		
+<template>
+	<div>
 		<div class="mui-navbar">
 			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
@@ -85,7 +60,25 @@
 						</a>
 					</div>
 		</div>
-		<script src="../assets/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+	</div>
+</template>
 
-</html> 
+
+<style lang="css" scoped>
+		div.mui-content{margin-top:100px;}
+		.mui-table-view{margin-top:20px}
+		h5{margin:15px 0px 0px 15px;}
+
+		
+		#checkbox_div{text-align: center;margin: 20px 0px;font-size:13px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+		#form_checkbox{border-radius: 0;width:20px;height: 20px;border:1px solid #ccc;}
+		#checkbox_font{padding-left:10px}
+		#form_sublie{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-line-pack: center;align-content: center;}
+		#form_sublie a{min-width:264px;width:70%;max-width:300px;height:45px;color:#fff;font-size:20px;}
+		.mybtnColor{background: #ffa684;}
+		.mybtnColor:active{background: #f0571d;}
+		::-webkit-input-placeholder{font-size:14px;}
+		.placeholder{color:#a9a9a9;margin-left:30px;font-size:14px;}
+		#tongxunlu{float:right;position:absolute;right:33px;top:10px;color:#537092;}
+		#yonghu{font-size:29px;position:absolute;right:33px;top:10px;color:#537092}
+</style>

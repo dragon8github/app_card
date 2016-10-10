@@ -1,42 +1,5 @@
-<html>
-	<head>
-		<title>全部订单</title> 
-		<meta charset="UTF-8" />
-	</head>
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/mui.min.css" />
-	<link rel="stylesheet" type="text/css" href="../assets/ico/iconfont.css"/>
-	<link rel="stylesheet" type="text/css" href="../assets/css/common.css"/>
-	
-	<style>
-		div.mui-content{margin-top:44px;margin-bottom: 0px;}
-		div#sliderSegmentedControl{background: #fff;height:58px;line-height: 58px;}
-		.mui-segmented-control .mui-control-item{line-height: 58px;}
-		.arrow-down{ width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #000;position: absolute;top:49%;margin-left:5px;}
-		.mui-control-item{position: relative;}
-		.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar{background: #cb6270;}
-		.mui-table-view{margin-top:15px;}
-		.mui-table-view-cell{padding: 11px 15px 0px 11px;}
-		.mui-slider .mui-slider-group .mui-slider-item img{width:auto;}
-		#slider{height: 100%;}
-		.mui-table-view:last-child{margin-bottom:120px;}
-		
-		._img_div{width:25%;float:left;height:60px;text-align: center;max-width: 85px;}
-		._img_div img{width:65px;height:61px;}
-		._center_div{width:50%;float:left;height:60px;display:block;text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
-		._center_div_p1{color:#000;font-weight: bold;}
-		._right_div{width:25%;float:left;height:60px;text-align: right;padding-right: 5px;overflow-wrap: break-word;}
-		._right_div_p1{color:#f06530;font-weight: bold;}
-		._right_div_p1_2{color:#aaaaaa;font-weight: bold;}
-		._right_div_p3_span{color:#000;}
-		._link{clear: both;height: 20px;width: 100%;border-bottom: 1px solid #ebebeb;}
-		._bottom_div{height: 40px;clear:both;position: relative;}
-		._bottom_div_font{position:absolute;left:25%;top:7px;color:#8f8f94;font-size: 14px;}
-		._bottom_div_btn{float:right;height:25px;font-size:12px;width:70px;line-height: 10px;background: #f0571d;position: absolute;right:15px;top:7px;}
-	</style>
-	<body> 		
-		
+<template>
+	<div>
 		<div class="mui-navbar">
 			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
@@ -65,7 +28,6 @@
 				
 				<!-- 拖拉条 -->
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
-				
 				
 				<div class="mui-slider-group">
 					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">	
@@ -168,68 +130,39 @@
 					 
 					 
 					
-					
-					<div id="item2mobile" class="mui-slider-item mui-control-content">
-						<div id="scroll2" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
-								<div class="mui-loading">
-									<div class="mui-spinner">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="item3mobile" class="mui-slider-item mui-control-content">
-						<div id="scroll3" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
-								<div class="mui-loading">
-									<div class="mui-spinner">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
-		</div> 
-		<script src="../assets/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			mui.init({
-				swipeBack: false
-			});
-			(function($) {
-				$('.mui-scroll-wrapper').scroll({
-					indicators: true //是否显示滚动条
-				});
-				var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第二个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
-				var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
-				var item2 = document.getElementById('item2mobile');
-				var item3 = document.getElementById('item3mobile');
-				document.getElementById('slider').addEventListener('slide', function(e) {
-					if (e.detail.slideNumber === 1) {
-						if (item2.querySelector('.mui-loading')) {
-							setTimeout(function() {
-								item2.querySelector('.mui-scroll').innerHTML = html2;
-							}, 500);
-						}
-					} else if (e.detail.slideNumber === 2) {
-						if (item3.querySelector('.mui-loading')) {
-							setTimeout(function() {
-								item3.querySelector('.mui-scroll').innerHTML = html3;
-							}, 500);
-						}
-					}
-				});
-				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
-				$('.mui-input-group').on('change', 'input', function() {
-					if (this.checked) {
-						sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
-						//force repaint
-						sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
-					}
-				});
-			})(mui); 
-		</script>
+		</div>
+	</div>
+	
+</template>
 
-	</body>
-</html> 
+
+<style scoped>
+		.mui-scroll-wrapper{overflow: visible}
+		.mui-slider{overflow: visible}
+		div.mui-content{margin-top:44px;margin-bottom: 0px;}
+		div#sliderSegmentedControl{background: #fff;height:58px;line-height: 58px;}
+		.mui-segmented-control .mui-control-item{line-height: 58px;}		
+		.arrow-down{ width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #000;position: absolute;top:49%;margin-left:5px;}
+		.mui-control-item{position: relative;}
+		.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar{background: #cb6270;}
+		.mui-table-view{margin-top:15px;}
+		.mui-table-view-cell{padding: 11px 15px 0px 11px;}
+		.mui-slider .mui-slider-group .mui-slider-item img{width:auto;}
+		#slider{height: 100%;}
+		.mui-table-view:last-child{margin-bottom:120px;}
+		
+		._img_div{width:25%;float:left;height:60px;text-align: center;max-width: 85px;}
+		._img_div img{width:65px;height:61px;}
+		._center_div{width:50%;float:left;height:60px;display:block;text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+		._center_div_p1{color:#000;font-weight: bold;}
+		._right_div{width:25%;float:left;height:60px;text-align: right;padding-right: 5px;overflow-wrap: break-word;}
+		._right_div_p1{color:#f06530;font-weight: bold;}
+		._right_div_p1_2{color:#aaaaaa;font-weight: bold;}
+		._right_div_p3_span{color:#000;}
+		._link{clear: both;height: 20px;width: 100%;border-bottom: 1px solid #ebebeb;}
+		._bottom_div{height: 40px;clear:both;position: relative;}
+		._bottom_div_font{position:absolute;left:25%;top:7px;color:#8f8f94;font-size: 14px;}
+		._bottom_div_btn{float:right;height:25px;font-size:12px;width:70px;line-height: 10px;background: #f0571d;position: absolute;right:15px;top:7px;}
+</style>

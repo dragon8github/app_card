@@ -1,3 +1,5 @@
+/* 高度默认100% */
+html,body,#app{    height: 100%; }
 /*  将浏览器的基准字号设置为 62.5%，也就是 10px */
 html {
   font-size: 62.5%;
@@ -24,8 +26,6 @@ color: #fff;
 }
 /* 内容区域与头部的间距 */
 div.mui-content{
-	margin-top:60px;
-	margin-bottom: 60px;
 }
 /* 淘宝IOC的默认大小 */
 .iconfont{
