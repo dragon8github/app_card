@@ -63,6 +63,9 @@
 	</div>
 </template>
 
+<script>
+
+</script>
 
 <style lang="css" scoped>
 		div.mui-content{margin-top:100px;}

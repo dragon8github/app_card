@@ -1,9 +1,9 @@
 /* 套路0： 加载项目需要的全局css和js */
-require('css/mui.min.css')
+require('css/mui.min.css') 
 require('ico')
 require('css/common.css')
-let mui = require('js/mui.min.js')
-window.mui = mui
+
+window.mui = require('js/mui.min.js')
 
 
 
@@ -35,6 +35,7 @@ const router = new VueRouter({
 	routes : map
 })
 
+window.router = router;
 
 /* 套路4：启动Vue */
 const app = new Vue({
