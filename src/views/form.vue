@@ -1,13 +1,6 @@
 <template>
 	<div>
-		<div class="mui-navbar">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">信用卡还款</h1>
-			</div>
-		</div>  
+		<nav-header :_title="mytitle" ></nav-header> 
 		<div class="mui-content">
 				<div id='login-form' class="mui-input-group">
 					<div class="mui-input-row ">
@@ -64,11 +57,21 @@
 </template>
 
 <script>
-
+ import navHeader from 'components/navHeader'
+ export default {
+ 	data () {
+ 		return {
+ 			mytitle : "信用卡还款"
+ 		} 		
+ 	}
+ 	,components:{
+ 		navHeader
+ 	}
+ }
 </script>
 
 <style lang="css" scoped>
-		div.mui-content{margin-top:100px;}
+		div.mui-content{margin-top:60px;}
 		.mui-table-view{margin-top:20px}
 		h5{margin:15px 0px 0px 15px;}
 

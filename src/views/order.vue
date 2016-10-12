@@ -1,27 +1,20 @@
 <template>
 	<div>
-		<div class="mui-navbar">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">全部订单</h1>
-			</div>
-		</div>   
+		<nav-header :_title="mytitle" ></nav-header> 
 		
 		<div class="mui-content">
-				<div id="slider" class="mui-slider">
+			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a id="all_order" class="mui-control-item" href="#item1mobile">
-						全部 <span class="arrow-down"></span>
+					<a id="all_order" class="mui-control-item" v-tap="{methods:change_title}">
+						全部 <span class="arrow-down" ></span>
 					</a> 
-					<a class="mui-control-item" href="#item2mobile">
+					<a class="mui-control-item" v-tap="{methods:change_title}">
 						待付款
 					</a>
-					<a class="mui-control-item" href="#item3mobile">
+					<a class="mui-control-item" v-tap="{methods:change_title}">
 						待发货
 					</a>
-					<a class="mui-control-item" href="#item3mobile">
+					<a class="mui-control-item" v-tap="{methods:change_title}">
 						待收货
 					</a>
 				</div>
@@ -33,7 +26,8 @@
 					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">	
 						<div id="scroll1" class="mui-scroll-wrapper">
 							<div class="mui-scroll">
-								<ul class="mui-table-view">									
+
+								<ul class="mui-table-view" v-show="all || payment">									
 									<li class="mui-table-view-cell">										
 										<div>																
 											<div class="_img_div"><img src="../assets/images/xykhk.png" /></div>
@@ -58,6 +52,7 @@
 										</div>
 									</li>									
 								</ul>		
+
 								<ul class="mui-table-view">									
 									<li class="mui-table-view-cell">										
 										<div>																
@@ -127,9 +122,6 @@
 							</div>
 						</div> 
 					</div>	
-					 
-					 
-					
 				</div>
 			</div>
 		</div>
@@ -137,8 +129,47 @@
 	
 </template>
 
+<script>
+ import navHeader from 'components/navHeader'
+ import { backPath } from 'getters'
+ export default {
+ 	vuex: {
+ 		getters:{
+ 			backPath
+ 		}
+ 	},
+ 	data () {
+ 		return {
+ 			mytitle : "全部订单",
+ 			all : true,
+ 			payment: false,
+ 			Wait_delivery : false,
+ 			Wait_goods : false
+ 		} 		
+ 	}, 	
+ 	methods: {
+ 		change_title (para) { 	
+ 			var e = para.event;
+ 			var index = $(e.target).index();
+ 			var text = $(e.target).text();
+ 			if( !text.trim() ) return false;	 
+ 			$("#sliderProgressBar").css("left",25 * index + "%");
+ 			this.mytitle = text.trim() + "订单";
+ 		}
+ 	},
+ 	components:{
+ 		navHeader
+ 	},
+ 	created () {
+ 	
+ 	}
+
+ }
+</script>
 
 <style scoped>
+		#sliderProgressBar{transition: all .2s ease}
+
 		.mui-scroll-wrapper{overflow: visible}
 		.mui-slider{overflow: visible}
 		div.mui-content{margin-top:44px;margin-bottom: 0px;}

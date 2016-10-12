@@ -1,14 +1,6 @@
 <template>
-	<div>
-		<div class="mui-navbar">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">我的银行卡</h1>
-				<a id="_add" class="mui-icon mui-icon-plusempty mui-pull-right"></a>
-			</div>
-		</div>    
+	<div>	
+		<nav-header :_title="mytitle" :_right="myright"></nav-header>
 		
 		<div class="mui-content _mycards">
 			<div class="_card1 _background_1">
@@ -92,11 +84,27 @@
 	</div>
 </template>
 
+<script>
+	import navHeader from 'components/navHeader'
+
+	export default {
+		data () {
+			return {
+				mytitle : "我的银行卡",
+				myright : true
+			}
+		},
+		components: {
+			navHeader
+		}
+	}
+</script>
+
 
 <style scoped>		
 		html,body,.mui-content{background: #2d3132;font-family: "微软雅黑";overflow-x: hidden;}
 		.mui-bar-nav{box-shadow: none;}
-		div.mui-content{    margin-top: 43px;margin-bottom:0;padding:10px 0px;}
+		div.mui-content{    margin-top: 44px;margin-bottom:0;padding:10px 0px;}
 		
 		#_add{color: #fff;font-weight: bolder;font-size:30px;} 
 		._mycards{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;color:#fff}
