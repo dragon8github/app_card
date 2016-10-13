@@ -25,7 +25,8 @@ module.exports = {
       'js': path.resolve(__dirname, '../src/assets/js'), 
       'ico': path.resolve(__dirname, '../src/assets/ico/iconfont.css'),
       'getters':path.resolve(__dirname,'../src/vuex/getters'),
-      'actions':path.resolve(__dirname,'../src/vuex/actions')
+      'actions':path.resolve(__dirname,'../src/vuex/actions'),
+      'store':path.resolve(__dirname,'../src/vuex/store')
     }
   },
   resolveLoader: {

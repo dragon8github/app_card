@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<nav-header :_title="mytitle" ></nav-header> 
+	<div class="container">
 		
 		<div class="mui-content">
 			<div id="slider" class="mui-slider">
@@ -131,13 +130,8 @@
 
 <script>
  import navHeader from 'components/navHeader'
- import { backPath } from 'getters'
+
  export default {
- 	vuex: {
- 		getters:{
- 			backPath
- 		}
- 	},
  	data () {
  		return {
  			mytitle : "全部订单",
@@ -161,7 +155,10 @@
  		navHeader
  	},
  	created () {
- 	
+ 		let self = this;
+ 		self.$store.dispatch('set_back_path',"abc123").then(function(){
+ 			console.log("hahahaha",self.$store.getters.backPath) 
+ 		})
  	}
 
  }
@@ -169,10 +166,10 @@
 
 <style scoped>
 		#sliderProgressBar{transition: all .2s ease}
+		.mui-scroll{background: #efeff4}
 
 		.mui-scroll-wrapper{overflow: visible}
 		.mui-slider{overflow: visible}
-		div.mui-content{margin-top:44px;margin-bottom: 0px;}
 		div#sliderSegmentedControl{background: #fff;height:58px;line-height: 58px;}
 		.mui-segmented-control .mui-control-item{line-height: 58px;}		
 		.arrow-down{ width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #000;position: absolute;top:49%;margin-left:5px;}
@@ -182,7 +179,7 @@
 		.mui-table-view-cell{padding: 11px 15px 0px 11px;}
 		.mui-slider .mui-slider-group .mui-slider-item img{width:auto;}
 		#slider{height: 100%;}
-		.mui-table-view:last-child{margin-bottom:120px;}
+		.mui-table-view:last-child{margin-bottom:70px;}
 		
 		._img_div{width:25%;float:left;height:60px;text-align: center;max-width: 85px;}
 		._img_div img{width:65px;height:61px;}

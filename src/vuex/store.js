@@ -1,5 +1,3 @@
- 
-
 /* 套路1：引入vue相关 */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -15,5 +13,6 @@ export default new Vuex.Store({
 	modules: {
 		base
 	},
-    strict: true
+	getters:require('./getters'),
+	actions:require('./actions')  
 })

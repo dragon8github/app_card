@@ -1,13 +1,22 @@
+/* 为了配合转场，必须变为position + z-index */
+.container{
+	position: absolute;height: 100%;width:100%;top: 0;left: 0;z-index: 0;
+}
+
 /* 高度默认100% */
 html,body,#app{    height: 100%; }
+
 /*  将浏览器的基准字号设置为 62.5%，也就是 10px */
 html {
   font-size: 62.5%;
 }
+
 /* 为了计算方便。然后在 body 上应用了 font-size: 1.6rem;，将页面字号设置为 16px */
 body {
   font-size: 1.6rem; /* =16px */
+  overflow-x: hidden;
 }
+
 /* 全局字体设置 */
 body,.mui-input-row label,::-webkit-input-placeholder{
 	  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
@@ -26,6 +35,7 @@ color: #fff;
 }
 /* 内容区域与头部的间距 */
 div.mui-content{
+	padding-top:44px;margin-bottom: 0px;
 }
 /* 淘宝IOC的默认大小 */
 .iconfont{
