@@ -1,34 +1,16 @@
 <template>
   <div class="hello container">
-    <nav-header :_title="mytitle" :left="false"></nav-header> 
-    
-     <div class="mui-content">
-       <router-link to="order">order</router-link>
-       <transition name="fade">
-          <router-view  keep-alive></router-view>
-       </transition>  
-     </div>
-     <nav-footer></nav-footer>
+      <p><router-link to="add">添加银行卡</router-link></p>
+      <p><router-link to="card">我的银行卡</router-link></p>
+      <p><router-link to="form">表单</router-link></p>
+      <p><router-link to="order">订单列表</router-link></p>
+      <p><router-link to="order/1">订单详情</router-link></p>
+      <p><router-link to="repay">还款详情</router-link></p>
   </div>
 </template>
 
-<script>
-import navHeader from 'components/navHeader'
-import navFooter from 'components/navFooter'
-export default {
-  components:{
-    navHeader,navFooter
-  },
-  data () {
-    return {
-      mytitle:"生活小工具"
-    }
-  }
-}
-
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.mui-content{background: #efeff4;}
+p{font-size:20px;color:orange;margin:30px;}
 </style>

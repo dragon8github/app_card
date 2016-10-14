@@ -1,13 +1,7 @@
 <template>
 	<div>
-		<div class="mui-navbar">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">确认还款信息</h1>
-			</div>
-		</div>  
+		<nav-header :_title="mytitle"></nav-header>
+		
 		
 		<div class="mui-content _repay">
 				<div class="_username"><h3>李钊鸿</h3></div>
@@ -30,11 +24,26 @@
 	</div>
 </template>
 
+<script>
+	import navHeader from 'components/navHeader'
+
+	export default {
+		data () {
+			return {
+				mytitle : "确认还款信息",
+				myright : true
+			}
+		},
+		components: {
+			navHeader
+		}
+	}
+</script>
 
 <style lang="css" scoped>
 		html,body{font-family: "微软雅黑";}
 		.mui-btn-warning{background: #f0571d;width: 100%;height: 50px;font-size:21px;}
-		div.mui-content{margin-top:60px;}
+		
 		
 		._repay div{margin:10px auto 0px;}
 		._repay{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}

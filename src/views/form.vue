@@ -71,11 +71,9 @@
 </script>
 
 <style lang="css" scoped>
-		div.mui-content{margin-top:60px;}
+		div.mui-content{margin-top:20px;}
 		.mui-table-view{margin-top:20px}
 		h5{margin:15px 0px 0px 15px;}
-
-		
 		#checkbox_div{text-align: center;margin: 20px 0px;font-size:13px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
 		#form_checkbox{border-radius: 0;width:20px;height: 20px;border:1px solid #ccc;}
 		#checkbox_font{padding-left:10px}

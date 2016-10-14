@@ -1,6 +1,6 @@
 <template>
 	<div class="mui-content container">
-	
+		<nav-header :_title="mytitle"></nav-header>
 		
 		<div class="mui-content _inner_mui-content">
 			<div class="_button_div">
@@ -13,11 +13,23 @@
 	</div>
 </template>
 
+
 <script>
+	import navHeader from 'components/navHeader'
+
 	export default {
-		
+		data () {
+			return {
+				mytitle : "我的银行卡",
+				myright : true
+			}
+		},
+		components: {
+			navHeader
+		}
 	}
 </script>
+
 
 <style lang="css" scoped>
 		

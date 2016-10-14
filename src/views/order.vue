@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		
+		<nav-header :_title="mytitle"></nav-header>
 		<div class="mui-content">
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">

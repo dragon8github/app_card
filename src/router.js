@@ -5,22 +5,16 @@ Vue.use(VueRouter)
 
 /*  配置路由规则 */
 const map = [
-	// 重定向
-	{path:'/index',redirect: '/'},
-	// 路由根路径
-	{path:'/',component:require('./views/index'),
-		// 定义子路由
-		children:[
-			{path:'/order',component:require('./views/order')},			
-			{path:'/card',component:require('./views/card')},
-			{path:'/add',component:require('./views/add')},
-			{path:'/form',component:require('./views/form')},
-			{path:'/repay',component:require('./views/repay')},
-			{path:'/protocol',component:require('./views/protocol')}
-		]
-	},
-	// 正常路由
-	{path:'/order/:id',component:require('./views/orderDetails')}
+
+	{path:'/index',redirect: '/'},	// 重定向
+	{path:'/',component:require('./views/index')},
+	{path:'/order',component:require('./views/order')},	
+	{path:'/order/:id',component:require('./views/orderDetails')},		
+	{path:'/card',component:require('./views/card')},
+	{path:'/add',component:require('./views/add')},
+	{path:'/form',component:require('./views/form')},
+	{path:'/repay',component:require('./views/repay')},
+	{path:'/protocol',component:require('./views/protocol')}
 ]
 
 

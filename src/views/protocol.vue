@@ -1,13 +1,7 @@
 <template>
 	<div>
-		<div class="mui-navbar">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">信用卡还款协议</h1>
-			</div>
-		</div>
+		<nav-header :_title="mytitle"></nav-header>
+		
 		<div class="mui-content">
 			<div class="_line"></div>
 			<div class="_body">
@@ -55,6 +49,23 @@
 			</div>
 	</div>
 </template>
+
+
+<script>
+	import navHeader from 'components/navHeader'
+
+	export default {
+		data () {
+			return {
+				mytitle : "信用卡还款服务协议",
+				myright : true
+			}
+		},
+		components: {
+			navHeader
+		}
+	}
+</script>
 
 
 <style lang="css" scoped>
