@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container" :class="{'_effect--50':decline}">
 		<nav-header :_title="mytitle"></nav-header>
 		<div class="mui-content">
 			<div id="slider" class="mui-slider">
@@ -45,9 +45,9 @@
 										<div class="_link"></div>
 										<div class="_bottom_div">											
 											<span class="_bottom_div_font">共 1 件商品</span>
-											<button type="button" class="mui-btn mui-btn-danger _bottom_div_btn">
-												支付
-											</button>
+											
+											<router-link to="/order/1" class="mui-btn mui-btn-danger _bottom_div_btn">支付</router-link>
+											
 										</div>
 									</li>									
 								</ul>		
@@ -124,14 +124,20 @@
 				</div>
 			</div>
 		</div>
+		 <transition name="slide-fade">
+		          <router-view  keep-alive></router-view>
+		 </transition>  
 	</div>
 	
 </template>
 
 <script>
  import navHeader from 'components/navHeader'
-
+import { mapGetters } from 'vuex'
  export default {
+ 	vuex:{
+
+ 	},
  	data () {
  		return {
  			mytitle : "全部订单",
@@ -155,10 +161,17 @@
  		navHeader
  	},
  	created () {
+
  		let self = this;
- 		self.$store.dispatch('set_back_path',"abc123").then(function(){
- 			console.log("hahahaha",self.$store.getters.backPath) 
- 		})
+ 		console.log(self.$store.getters.decline);
+ 		// self.$store.dispatch('set_back_path',"abc123").then(function(){
+ 		// 	console.log(self.$store.getters.backPath) 
+ 		// }) 
+ 	},
+ 	computed: {
+		 ...mapGetters([
+	      'decline',
+	    ])
  	}
 
  }
@@ -167,7 +180,6 @@
 <style scoped>
 		#sliderProgressBar{transition: all .2s ease}
 		.mui-scroll{background: #efeff4}
-
 		.mui-scroll-wrapper{overflow: visible}
 		.mui-slider{overflow: visible}
 		div#sliderSegmentedControl{background: #fff;height:58px;line-height: 58px;}
@@ -180,6 +192,7 @@
 		.mui-slider .mui-slider-group .mui-slider-item img{width:auto;}
 		#slider{height: 100%;}
 		.mui-table-view:last-child{margin-bottom:70px;}
+		button a{color:#fff;}
 		
 		._img_div{width:25%;float:left;height:60px;text-align: center;max-width: 85px;}
 		._img_div img{width:65px;height:61px;}

@@ -1,6 +1,9 @@
 /* 为了配合转场，必须变为position + z-index */
 .container{
-	position: absolute;height: 100%;width:100%;top: 0;left: 0;z-index: 0;
+	position: relative;height: 100%;width:100%;top: 0;left: 0;z-index: 0;opacity: 1;
+}
+.container_inner{
+	position: absolute;height: 100%;width:100%;top: 0;left: 0;z-index: 10;opacity: 1;background: #efeff4;
 }
 
 /* 高度默认100% */

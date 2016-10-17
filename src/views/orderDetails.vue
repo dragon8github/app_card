@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container_inner">
 			<div class="_header">
 			<div class="_header_ico">
 				<i class="icon iconfont">&#xe607;</i>

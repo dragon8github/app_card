@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />   
     <title>app</title>
   </head>
+  <style>
+    .slide-fade-enter-active {
+      transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-active {
+      padding-left: 10px;
+      opacity: 0;
+    }
+      
+    ._effect {
+        opacity: 1;
+        transition: 5s all ease;
+    }
+
+    ._effect--30 {
+        transform: translate3d(-30%, 0, 0);
+    }
+
+    ._effect--50 {
+        opacity: 0;
+        transform: translate3d(-50%, 0, 0);
+    }
+
+  </style>
   <body>
 
     <div id="app">

@@ -8,8 +8,11 @@ const map = [
 
 	{path:'/index',redirect: '/'},	// 重定向
 	{path:'/',component:require('./views/index')},
-	{path:'/order',component:require('./views/order')},	
-	{path:'/order/:id',component:require('./views/orderDetails')},		
+	{path:'/order',component:require('./views/order'),
+		children:[
+			{path:':id',component:require('./views/orderDetails')}
+		]	
+	},			
 	{path:'/card',component:require('./views/card')},
 	{path:'/add',component:require('./views/add')},
 	{path:'/form',component:require('./views/form')},
@@ -24,7 +27,7 @@ const router = new VueRouter({
 })
 
 router.afterEach((to, from) => {
-	//console.log(to, from)
+	console.log(to, from)
 })
 
 
