@@ -1,6 +1,6 @@
 <template>
 	<div class="container_inner">
-			<div class="_header">
+		<div class="_header">
 			<div class="_header_ico">
 				<i class="icon iconfont">&#xe607;</i>
 			</div>
@@ -31,11 +31,14 @@
 		</div>
 		
 		<div class="_footer">
-			<button type="button" class="mui-btn mui-btn-warning">
+			<router-link to="/form" class="mui-btn mui-btn-warning">
 					立即支付
-			</button>
+			</router-link>
 			<p class="_footer_p"><a href="javascript:;" @click="_cannelOrder">取消订单</a></p>
 		</div>
+		 <transition name="slide-fade">
+		          <router-view  keep-alive></router-view>
+		 </transition>  
 	</div>
 </template>
 
@@ -55,7 +58,26 @@
 			        }
 			    })
 			}
-		}
+		},
+		beforeDestroy : () => {
+		
+			//self.$parent.route_pipe(false);
+		},
+	 	beforeRouteEnter:(to, from, next) => {
+		    // 在渲染该组件的对应路由被 confirm 前调用
+		    // 不！能！获取组件实例 `this`
+		    // 因为当钩子执行前，组件实例还没被创建
+	    	 next( vm => {
+	    	 	vm.$parent.route_pipe(true);
+	    	 });
+	    },
+	    beforeRouteLeave: (to, from, next) => {
+		    // 在渲染该组件的对应路由被 confirm 前调用
+		    // 不！能！获取组件实例 `this`
+		    // 因为当钩子执行前，组件实例还没被创建
+		     console.log(this);
+	    	// next();
+	    },
 	}
 </script>
 

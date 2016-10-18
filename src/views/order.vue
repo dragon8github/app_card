@@ -1,5 +1,6 @@
 <template>
-	<div class="container" :class="{'_effect--50':decline}">
+	<div>
+		<div class="container _effect" :class="{'_effect--50':decline}">
 		<nav-header :_title="mytitle"></nav-header>
 		<div class="mui-content">
 			<div id="slider" class="mui-slider">
@@ -124,29 +125,29 @@
 				</div>
 			</div>
 		</div>
-		 <transition name="slide-fade">
-		          <router-view  keep-alive></router-view>
-		 </transition>  
+	</div>
+	 <transition name="slide-fade">
+	          <router-view  keep-alive></router-view>
+	 </transition>  
 	</div>
 	
 </template>
 
 <script>
  import navHeader from 'components/navHeader'
-import { mapGetters } from 'vuex'
- export default {
- 	vuex:{
+ import { mapActions } from 'vuex'
 
- 	},
+ export default {
  	data () {
  		return {
  			mytitle : "全部订单",
  			all : true,
  			payment: false,
  			Wait_delivery : false,
- 			Wait_goods : false
+ 			Wait_goods : false,
+ 			decline:false
  		} 		
- 	}, 	
+ 	}, 
  	methods: {
  		change_title (para) { 	
  			var e = para.event;
@@ -155,23 +156,22 @@ import { mapGetters } from 'vuex'
  			if( !text.trim() ) return false;	 
  			$("#sliderProgressBar").css("left",25 * index + "%");
  			this.mytitle = text.trim() + "订单";
- 		}
+ 		},
+	    route_pipe (b) {
+	    	this.decline = b;
+	    }
  	},
  	components:{
  		navHeader
  	},
  	created () {
-
  		let self = this;
- 		console.log(self.$store.getters.decline);
+ 		//self.set_decline(false);
+ 		//console.log(this.decline);
+ 		//console.log(self.$store.getters.decline);
  		// self.$store.dispatch('set_back_path',"abc123").then(function(){
  		// 	console.log(self.$store.getters.backPath) 
  		// }) 
- 	},
- 	computed: {
-		 ...mapGetters([
-	      'decline',
-	    ])
  	}
 
  }

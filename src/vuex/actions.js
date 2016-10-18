@@ -2,3 +2,8 @@
 export const set_back_path = ({ commit }, backpath) => {
 	commit('BACK_PATH',backpath)
 }
+
+export const set_decline = ({ commit }, b) => {
+	console.log("我被调用了：set_decline")
+	commit('SET_DECLINE',b)
+}
