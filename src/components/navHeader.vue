@@ -1,16 +1,19 @@
 <template>
-	<div class="mui-navbar">
+	<div>
 			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" v-show = "_left" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon" :class="_lefticon"></span>
+				<button type="button" v-show = "_left" class="mui-left  mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<router-link :to="backPath" class="mui-icon" :class="_lefticon">
+						
+					</router-link>
 				</button>
-				<h1 class="mui-center mui-title" v-text="_title">标题</h1>
+				<h1 class="mui-center mui-title" v-text="_title">标题 </h1>
 				<a class="mui-icon mui-pull-right"  v-show = "_right" :class="_righticon"></a>
 			</div>
 	</div>  
-</template>
+</template> 
 
 <script>
+	import { mapGetters  } from 'vuex'　　
 	export default {
 		props: {
 			//标题
@@ -23,6 +26,11 @@
 			_lefticon:{type:String,default:"mui-icon-left-nav"},
 			//右边的图标
 			_righticon:{type:String,default:"mui-icon-plusempty"}					
+		},
+		computed: {
+		    ...mapGetters([
+	          'backPath',  //之后就可以在template中使用了如：:class="{'_effect--50':decline}"  或者script中如 console.log(this.decline);
+		    ])
 		}
 	}
 </script>

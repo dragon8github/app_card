@@ -1,134 +1,136 @@
 <template>
 	<div>
-		<div class="container _effect" :class="{'_effect--50':decline}">
-		<nav-header :_title="mytitle"></nav-header>
-		<div class="mui-content">
-			<div id="slider" class="mui-slider">
-				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a id="all_order" class="mui-control-item" v-tap="{methods:change_title}">
-						全部 <span class="arrow-down" ></span>
-					</a> 
-					<a class="mui-control-item" v-tap="{methods:change_title}">
-						待付款
-					</a>
-					<a class="mui-control-item" v-tap="{methods:change_title}">
-						待发货
-					</a>
-					<a class="mui-control-item" v-tap="{methods:change_title}">
-						待收货
-					</a>
-				</div>
-				
-				<!-- 拖拉条 -->
-				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
-				
-				<div class="mui-slider-group">
-					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">	
-						<div id="scroll1" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+		<div class="container " >
+			<header class="app-header">
+				<nav-header :_title="mytitle" class="_effect" :class="{'_effect--50':decline}" ></nav-header>
+			</header>
+			<div class="mui-content _effect" :class="{'_effect--30':decline}">
+				<div id="slider" class="mui-slider">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a id="all_order" class="mui-control-item" v-tap="{methods:change_title}">
+							全部 <span class="arrow-down" ></span>
+						</a> 
+						<a class="mui-control-item" v-tap="{methods:change_title}">
+							待付款
+						</a>
+						<a class="mui-control-item" v-tap="{methods:change_title}">
+							待发货
+						</a>
+						<a class="mui-control-item" v-tap="{methods:change_title}">
+							待收货
+						</a>
+					</div>
+					
+					<!-- 拖拉条 -->
+					<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+					
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">	
+							<div id="scroll1" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
 
-								<ul class="mui-table-view" v-show="all || payment">									
-									<li class="mui-table-view-cell">										
-										<div>																
-											<div class="_img_div"><img src="../assets/images/xykhk.png" /></div>
-											<div class="_center_div">
-												<p class="_center_div_p1">信用卡还款</p>
-												<p>还款账号：***4591</p>
-												<p>03-03 12:15</p>
-											</div>									
-											
-											<div class="_right_div">												
-												<p class="_right_div_p1">等待还款</p>
-												<h4>￥32.80</h4>
-												<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+									<ul class="mui-table-view" v-show="all || payment">									
+										<li class="mui-table-view-cell">										
+											<div>																
+												<div class="_img_div"><img src="../assets/images/xykhk.png" /></div>
+												<div class="_center_div">
+													<p class="_center_div_p1">信用卡还款</p>
+													<p>还款账号：***4591</p>
+													<p>03-03 12:15</p>
+												</div>									
+												
+												<div class="_right_div">												
+													<p class="_right_div_p1">等待还款</p>
+													<h4>￥32.80</h4>
+													<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+												</div>
+											</div>												
+											<div class="_link"></div>
+											<div class="_bottom_div">											
+												<span class="_bottom_div_font">共 1 件商品</span>
+												
+												<router-link to="/form" class="mui-btn mui-btn-danger _bottom_div_btn">支付</router-link>
+												
 											</div>
-										</div>												
-										<div class="_link"></div>
-										<div class="_bottom_div">											
-											<span class="_bottom_div_font">共 1 件商品</span>
-											
-											<router-link to="/order/1" class="mui-btn mui-btn-danger _bottom_div_btn">支付</router-link>
-											
-										</div>
-									</li>									
-								</ul>		
+										</li>									
+									</ul>		
 
-								<ul class="mui-table-view">									
-									<li class="mui-table-view-cell">										
-										<div>																
-											<div class="_img_div"><img src="../assets/images/sjcz.png" /></div>
-											<div class="_center_div">
-												<p class="_center_div_p1">手机充值</p>
-												<p>15916875152</p>
-												<p>03-03 12:15</p>
-											</div>									
-											
-											<div class="_right_div">												
-												<p class="_right_div_p1_2">已完成</p>
-												<h4>50.00</h4>
-												<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+									<ul class="mui-table-view">									
+										<li class="mui-table-view-cell">										
+											<div>																
+												<div class="_img_div"><img src="../assets/images/sjcz.png" /></div>
+												<div class="_center_div">
+													<p class="_center_div_p1">手机充值</p>
+													<p>15916875152</p>
+													<p>03-03 12:15</p>
+												</div>									
+												
+												<div class="_right_div">												
+													<p class="_right_div_p1_2">已完成</p>
+													<h4>50.00</h4>
+													<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+												</div>
+											</div>												
+											<div class="_link"></div>
+											<div class="_bottom_div">											
+												<span class="_bottom_div_font">共 1 件商品</span>
 											</div>
-										</div>												
-										<div class="_link"></div>
-										<div class="_bottom_div">											
-											<span class="_bottom_div_font">共 1 件商品</span>
-										</div>
-									</li>									
-								</ul>
-								<ul class="mui-table-view">									
-									<li class="mui-table-view-cell">										
-										<div>																
-											<div class="_img_div"><img src="../assets/images/fjp.png" /></div>
-											<div class="_center_div">
-												<p class="_center_div_p1">飞机票</p>
-												<p>15916875152</p>
-												<p>03-03 12:15</p>
-											</div>									
-											
-											<div class="_right_div">												
-												<p class="_right_div_p1_2">已完成</p>
-												<h4>50.00</h4>
-												<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+										</li>									
+									</ul>
+									<ul class="mui-table-view">									
+										<li class="mui-table-view-cell">										
+											<div>																
+												<div class="_img_div"><img src="../assets/images/fjp.png" /></div>
+												<div class="_center_div">
+													<p class="_center_div_p1">飞机票</p>
+													<p>15916875152</p>
+													<p>03-03 12:15</p>
+												</div>									
+												
+												<div class="_right_div">												
+													<p class="_right_div_p1_2">已完成</p>
+													<h4>50.00</h4>
+													<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+												</div>
+											</div>												
+											<div class="_link"></div>
+											<div class="_bottom_div">											
+												<span class="_bottom_div_font">共 1 件商品</span>
 											</div>
-										</div>												
-										<div class="_link"></div>
-										<div class="_bottom_div">											
-											<span class="_bottom_div_font">共 1 件商品</span>
-										</div>
-									</li>									
-								</ul>
-								<ul class="mui-table-view">									
-									<li class="mui-table-view-cell">										
-										<div>																
-											<div class="_img_div"><img src="../assets/images/xykhk.png" /></div>
-											<div class="_center_div">
-												<p class="_center_div_p1">信用卡还款</p>
-												<p>还款账号：***4591</p>
-												<p>03-03 12:15</p>
-											</div>									
-											
-											<div class="_right_div">												
-												<p class="_right_div_p1">等待还款</p>
-												<h4>￥32.80</h4>
-												<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+										</li>									
+									</ul>
+									<ul class="mui-table-view">									
+										<li class="mui-table-view-cell">										
+											<div>																
+												<div class="_img_div"><img src="../assets/images/xykhk.png" /></div>
+												<div class="_center_div">
+													<p class="_center_div_p1">信用卡还款</p>
+													<p>还款账号：***4591</p>
+													<p>03-03 12:15</p>
+												</div>									
+												
+												<div class="_right_div">												
+													<p class="_right_div_p1">等待还款</p>
+													<h4>￥32.80</h4>
+													<p>含手续费<span class="_right_div_p3_span">￥2</span></p>
+												</div>
+											</div>												
+											<div class="_link"></div>
+											<div class="_bottom_div">											
+												<span class="_bottom_div_font">共 1 件商品</span>
 											</div>
-										</div>												
-										<div class="_link"></div>
-										<div class="_bottom_div">											
-											<span class="_bottom_div_font">共 1 件商品</span>
-										</div>
-									</li>									
-								</ul>		
-							</div>
-						</div> 
-					</div>	
+										</li>									
+									</ul>		
+								</div>
+							</div> 
+						</div>	
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	 <transition name="slide-fade">
-	          <router-view  keep-alive></router-view>
-	 </transition>  
+		 <transition name="slide-fade">
+		          <router-view  keep-alive></router-view>
+		 </transition>  
 	</div>
 	
 </template>

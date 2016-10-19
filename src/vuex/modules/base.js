@@ -1,6 +1,6 @@
 
 let state = {
-	backPath: '',
+	backPath: '/',
 	decline:false
 }
 

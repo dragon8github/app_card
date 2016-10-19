@@ -1,7 +1,9 @@
 <template>
 	<div class="container_inner">
-		<nav-header :_title="mytitle" ></nav-header> 
-		<div class="mui-content">
+		<header class="app-header">
+			<nav-header :_title="mytitle" ></nav-header> 
+		</header>
+		<div class="mui-content _content">
 				<div id='login-form' class="mui-input-group">
 					<div class="mui-input-row ">
 						<i class="icon iconfont" id="yonghu">&#xe602;</i>
@@ -67,21 +69,17 @@
  	,components:{
  		navHeader
  	},
- 	created () {
- 		
- 	},
- 	beforeRouteEnter:(to, from, next) => {
-	    // 在渲染该组件的对应路由被 confirm 前调用
-	    // 不！能！获取组件实例 `this`
-	    // 因为当钩子执行前，组件实例还没被创建
-	    console.log("beforeRouteEnter");
-	    next();
-	  },
-	beforeRouteLeave: (to, from, next) => {
-	    // 导航离开该组件的对应路由时调用
-	    // 可以访问组件实例 `this`
-	   	console.log("beforeRouteLeave");
-	   	next();
+ 	beforeRouteEnter (to, from, next) {
+		// 在渲染该组件的对应路由被 confirm 前调用
+		// 不！能！获取组件实例 `this`
+		// 因为当钩子执行前，组件实例还没被创建
+		next( vm => {
+		vm.$parent.route_pipe(true);
+		});
+	},
+	beforeRouteLeave (to, from, next) {
+		this.$parent.route_pipe(false);
+		next();
 	}
  }
 </script>
