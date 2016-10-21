@@ -10,7 +10,7 @@ import fastclick from 'fastclick'	 //解决手机端 click 点击延迟
 import zepto from 'webpack-zepto' 	 //jquery、zepto
 import store from './vuex/store'	 // vuex相关
 import router from './router'		 //路由相关
-
+import Velocity from 'velocity-animate'
 
 Vue.use(vueTap)
 fastclick.attach(document.body) 	   //解决手机端 click 点击延迟
@@ -25,3 +25,4 @@ const app = new Vue({
 window.$ = zepto   					   //zepto
 window.mui = require('js/mui.min.js')  //UI框架的核心js
 window.router = router;				   //路由文件
+window.Velocity = Velocity;

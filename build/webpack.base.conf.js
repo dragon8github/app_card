@@ -4,6 +4,7 @@ var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var webpack = require('webpack')
 
+
 module.exports = {
   entry: {
     app: './src/main.js'

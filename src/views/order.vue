@@ -2,10 +2,12 @@
 	<div>
 		<div class="container " >
 			<header class="app-header">
-				<nav-header :_title="mytitle" class="_effect" :class="{'_effect--50':decline}" ></nav-header>
+				<nav-header :_title="mytitle" :_left="myleft" class="_effect" :class="{'_effect--50':decline}" ></nav-header>
 			</header>
+			 
 			<div class="mui-content _effect" :class="{'_effect--30':decline}">
 				<div id="slider" class="mui-slider">
+
 					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 						<a id="all_order" class="mui-control-item" v-tap="{methods:change_title}">
 							全部 <span class="arrow-down" ></span>
@@ -128,7 +130,10 @@
 				</div>
 			</div>
 		</div>
-		 <transition name="slide-fade">
+		 <transition name="slide-fade"    v-on:before-enter="beforeEnter"
+										  v-on:enter="enter"
+										  v-on:leave="leave"
+		  >
 		          <router-view  keep-alive></router-view>
 		 </transition>  
 	</div>
@@ -147,6 +152,7 @@
  			payment: false,
  			Wait_delivery : false,
  			Wait_goods : false,
+ 			myleft: false,
  			decline:false
  		} 		
  	}, 
@@ -161,19 +167,29 @@
  		},
 	    route_pipe (b) {
 	    	this.decline = b;
-	    }
+	    },
+		  
+		beforeEnter: function (el) {
+		     Velocity(el.querySelector("._content"),{translateX: "80%"},0);
+		     Velocity(el.querySelector("._title"),{translateX: "50%",opacity:0},0);
+		     Velocity(el.querySelector("._leftIco,_rightIco"),{opacity:0},0);
+		},
+		enter: function (el, done) {
+		    Velocity(el.querySelector("._content"),{translateX: "0%"},350,"ease");
+		    Velocity(el.querySelector("._title"),{translateX: "0%",opacity:1},350,"ease");
+			Velocity(el.querySelector("._leftIco,_rightIco"),{opacity:1},100); 
+
+		},
+		leave: function (el, done) {
+		  	Velocity(el.querySelector("._content"),{translateX: "100%"},350,"ease");
+		  	
+		}
  	},
  	components:{
  		navHeader
  	},
  	created () {
  		let self = this;
- 		//self.set_decline(false);
- 		//console.log(this.decline);
- 		//console.log(self.$store.getters.decline);
- 		// self.$store.dispatch('set_back_path',"abc123").then(function(){
- 		// 	console.log(self.$store.getters.backPath) 
- 		// }) 
  	}
 
  }

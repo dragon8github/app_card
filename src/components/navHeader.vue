@@ -1,13 +1,13 @@
 <template>
 	<div>
 			<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-				<button type="button" v-show = "_left" class="mui-left  mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+				<button type="button" v-show = "_left" class="_leftIco mui-left  mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
 					<router-link :to="backPath" class="mui-icon" :class="_lefticon">
 						
 					</router-link>
 				</button>
-				<h1 class="mui-center mui-title" v-text="_title">标题 </h1>
-				<a class="mui-icon mui-pull-right"  v-show = "_right" :class="_righticon"></a>
+				<h1 class="mui-center mui-title _title" v-text="_title">标题 </h1>
+				<a class="_rightIco mui-icon mui-pull-right"  v-show = "_right" :class="_righticon"></a>
 			</div>
 	</div>  
 </template> 
